@@ -44,6 +44,7 @@ class AccessRoom extends HTMLElement {
                 <my-play type="tijera"></my-play>
             </div>
         `;
+        this.classList.add("access-room__main-div-container");
     }
 }
 

@@ -31,6 +31,7 @@ class Welcome extends HTMLElement {
             <my-play type="tijera"></my-play>
             </div>
         `;
+        this.classList.add("welcome__main-div-container");
     }
 }
 
