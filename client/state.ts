@@ -1,6 +1,6 @@
 import { Router } from "@vaadin/router";
 import { rtdb } from "./rtdb";
-const API_BASE_URL = "https://piedra-papel-o-tijera-lucas.herokuapp.com" || "http://localhost:3000";
+const API_BASE_URL = window.location.href || "http://localhost:3000";
 
 const state = {
     data: {
