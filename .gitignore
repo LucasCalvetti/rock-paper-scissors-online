@@ -1,0 +1,7 @@
+.parcel-cache
+dist
+node_modules
+.vscode
+build
+index.js
+yarn-error.log
