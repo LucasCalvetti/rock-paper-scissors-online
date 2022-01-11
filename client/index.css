@@ -15,12 +15,19 @@ body {
     justify-content: space-between;
     height: 100vh;
 }
+@media (min-width: 900px) {
+    .welcome__main-div-container,
+    .new-room__main-div-container,
+    .access-room__main-div-container {
+        height: 130vh;
+    }
+}
 
 .welcome__title-container,
 .new-room__title-container,
 .access-room__title-container {
     color: #009048;
-    margin: 10px auto 7vh auto;
+    margin: 10px auto;
     width: 300px;
 }
 @media (min-width: 900px) {
@@ -50,15 +57,7 @@ body {
     justify-content: space-between;
     margin: 0 auto;
 }
-@media (min-width: 900px) {
-    .welcome__plays-container,
-    .access-room__plays-container,
-    .instructions__plays-container,
-    .new-room__plays-container,
-    .waiting__plays-container,
-    .ready__plays-container {
-    }
-}
+
 .welcome__play,
 .instructions__play,
 .game__player-play {
