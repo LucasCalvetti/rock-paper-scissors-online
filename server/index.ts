@@ -2,6 +2,7 @@ import * as express from "express";
 import { firestore, rtdb } from "./dbconfig";
 import * as cors from "cors";
 import { nanoid } from "nanoid";
+import * as path from "path";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -138,7 +139,7 @@ app.post("/rooms/:rtdbId", (req, res) => {
                 res.json({
                     player: "player1",
                 });
-            } else {
+            } else if (data.player2 == "Oponente") {
                 const p2RoomRef = rtdb.ref("/rooms/" + rtdbId + "/player2");
                 p2RoomRef.update({
                     name: name,
@@ -149,6 +150,19 @@ app.post("/rooms/:rtdbId", (req, res) => {
                 res.json({
                     player: "player2",
                 });
+            } else if (data.player2 == name) {
+                const p2RoomRef = rtdb.ref("/rooms/" + rtdbId + "/player1");
+                p2RoomRef.update({
+                    name: name,
+                });
+                roomCollection.doc(shortId.toString()).update({
+                    player2: name,
+                });
+                res.json({
+                    player: "player2",
+                });
+            } else if (data.player1 != name || data.player2 != name) {
+                console.log("El nombre no coincide con el de ninguno de los dos jugadores en la sala.");
             }
         });
 });
@@ -262,6 +276,11 @@ app.post("/restartGameData", (req, res) => {
         message: "Restart data completed",
     });
 });
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../dist/index.html"));
+});
+
 app.listen(port, () => {
     console.log("Funcionando en http://localhost:" + port);
 });

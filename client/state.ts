@@ -168,7 +168,6 @@ const state = {
             });
     },
     //Checkea si estan online ambos o no, si lo estan los redirije a "/ready" page
-    // (ver si lo divido en 2 funciones, una que checkee y otra que redirija)
     listenOnline(callback?) {
         const cs = this.getState();
         const roomsRef = rtdb.ref("/rooms/" + cs.rtdbId);
