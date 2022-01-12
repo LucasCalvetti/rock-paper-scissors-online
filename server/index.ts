@@ -162,7 +162,7 @@ app.post("/rooms/:rtdbId", (req, res) => {
                     player: "player2",
                 });
             } else if (data.player1 != name || data.player2 != name) {
-                console.log("El nombre no coincide con el de ninguno de los dos jugadores en la sala.");
+                res.status(500).send({ "Server message": "El nombre solicitado no pertenece a ningun jugador de la sala registrado." });
             }
         });
 });
