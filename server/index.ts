@@ -162,7 +162,9 @@ app.post("/rooms/:rtdbId", (req, res) => {
                     player: "player2",
                 });
             } else if (data.player1 != name || data.player2 != name) {
-                res.status(500).send({ "Server message": "El nombre solicitado no pertenece a ningun jugador de la sala registrado." });
+                res.json({
+                    message: "Tu nombre de usuario no pertenece a esta sala",
+                });
             }
         });
 });

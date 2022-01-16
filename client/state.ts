@@ -148,9 +148,13 @@ const state = {
                 return res.json();
             })
             .then((data) => {
-                cs.player = data.player;
-                this.setState(cs);
-                if (callback) callback();
+                if (data.message) {
+                    window.alert(data.message);
+                } else {
+                    cs.player = data.player;
+                    this.setState(cs);
+                    if (callback) callback();
+                }
             });
     },
     getRoomInfo(callback?) {
