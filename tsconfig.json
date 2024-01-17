@@ -2,6 +2,9 @@
     "compilerOptions": {
         "target": "esnext",
         "moduleResolution": "bundler",
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "noEmit": false,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true
     }
 }
