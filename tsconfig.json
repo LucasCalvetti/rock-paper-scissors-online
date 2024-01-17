@@ -1,9 +1,9 @@
 {
     "compilerOptions": {
         "target": "esnext",
-        "moduleResolution": "node",
+        "moduleResolution": "bundler",
         "resolveJsonModule": true,
-        "allowImportingTsExtensions": true, // Nueva opción añadida
-        "noEmit": true // Añade esta opción o ajusta según tus necesidades
+        "allowImportingTsExtensions": true,
+        "noEmit": true
     }
 }
