@@ -97,7 +97,7 @@ app.post("/rooms", (req, res) => {
 });
 
 app.get("/rooms/:shortId", (req, res) => {
-    const { userId } = req.query;
+    const { userId }: any = req.query;
     const { shortId } = req.params;
     usersCollection
         .doc(userId.toString())
