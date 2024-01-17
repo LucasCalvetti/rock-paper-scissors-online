@@ -9,6 +9,6 @@ const app = initializeApp({
     authDomain: "piedra-papel-o-tijera-apx.firebaseapp.com",
 });
 
-const rtdbFirebase = getDatabase();
+const rtdb = getDatabase();
 
-export { rtdbFirebase };
+export { rtdb };
