@@ -1,11 +1,14 @@
-import firebase from "firebase";
+// import firebase from "firebase";
 
-const app = firebase.initializeApp({
-    apiKey: "sQrF1qDEzFbyKPcc2ofLyNEO4TYxxoV2krWp38j4",
+import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
+
+const app = initializeApp({
+    apiKey: process.env.FIREBASE_API_KEY,
     databaseURL: "https://piedra-papel-o-tijera-apx-default-rtdb.firebaseio.com/",
     authDomain: "piedra-papel-o-tijera-apx.firebaseapp.com",
 });
 
-const rtdb = firebase.database();
+const rtdbFirebase = getDatabase();
 
-export { rtdb };
+export { rtdbFirebase };
