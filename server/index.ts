@@ -1,9 +1,9 @@
 import * as express from "express";
 import { firestore, rtdb } from "./dbconfig";
-import * as cors from "cors";
 import { nanoid } from "nanoid";
 import * as path from "path";
 
+let cors = require("cors");
 const app = express();
 const port = process.env.PORT || 3000;
 
