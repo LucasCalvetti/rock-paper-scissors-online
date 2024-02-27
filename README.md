@@ -1,8 +1,15 @@
+SPANISH:
 
-Un piedra papel o tijeras online. 
+### Piedra, Papel o Tijeras Online
 
-Se puede jugar desde acá: https://rock-paper-scissors-online-dxti.onrender.com
+Puedes jugar a Piedra, Papel o Tijeras en línea [aquí](https://rock-paper-scissors-online-dxti.onrender.com).
 
+Documentación de los Endpoints de la API: [Ver Documentación](https://documenter.getpostman.com/view/17225834/2sA2rFRfDd)
 
+ENGLISH:
 
-Y acá esta la documentación de los end points de la API, hecha en postman: https://documenter.getpostman.com/view/17225834/2sA2rFRfDd
+### Rock Paper Scissors Online
+
+You can play the Rock Paper Scissors online game [here](https://rock-paper-scissors-online-dxti.onrender.com).
+
+API Endpoint Documentation: [View Documentation](https://documenter.getpostman.com/view/17225834/2sA2rFRfDd)
