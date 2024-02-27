@@ -1,5 +1,5 @@
 import { Router } from "@vaadin/router";
-import { rtdb } from "./rtdb";
+import { rtdb, ref, onValue } from "./rtdb";
 const API_BASE_URL = process.env.NODE_ENV === "production" ? "https://piedra-papel-o-tijera-lucas.herokuapp.com" : "http://localhost:3000";
 
 // const API_URL = "http://localhost:3000";
@@ -174,9 +174,9 @@ const state = {
     //Checkea si estan online ambos o no, si lo estan los redirije a "/ready" page
     listenOnline(callback?) {
         const cs = this.getState();
-        const roomsRef = rtdb.ref("/rooms/" + cs.rtdbId);
+        const roomsRef = ref(rtdb, "/rooms/" + cs.rtdbId);
 
-        roomsRef.on("value", (snapshot) => {
+        onValue(roomsRef, (snapshot) => {
             const player2OnlineInfo = snapshot.val().player2.online;
             const player1OnlineInfo = snapshot.val().player1.online;
             if (cs.player == "player1") {
@@ -196,9 +196,9 @@ const state = {
     },
     listenReady(callback?) {
         const cs = this.getState();
-        const roomRef = rtdb.ref("/rooms/" + cs.rtdbId);
+        const roomRef = ref(rtdb, "/rooms/" + cs.rtdbId);
 
-        roomRef.on("value", (snapshot) => {
+        onValue(roomRef, (snapshot) => {
             const player2ReadyInfo = snapshot.val().player2.ready;
             const player1ReadyInfo = snapshot.val().player1.ready;
             if (cs.player == "player1") {
@@ -230,9 +230,9 @@ const state = {
     },
     listenOpponentPlay(callback?) {
         const cs = this.getState();
-        const roomRef = rtdb.ref("/rooms/" + cs.rtdbId);
+        const roomRef = ref(rtdb, "/rooms/" + cs.rtdbId);
 
-        roomRef.on("value", (snapshot) => {
+        onValue(roomRef, (snapshot) => {
             var player2Play = snapshot.val().player2.play;
             var player1Play = snapshot.val().player1.play;
             if (cs.player == "player1" && (window.location.pathname == "/result" || window.location.pathname == "/game")) {

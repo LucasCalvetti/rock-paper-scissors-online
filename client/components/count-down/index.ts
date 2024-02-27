@@ -3,7 +3,7 @@ export function initCountDown() {
         "countdown-timer",
         class CountdownTimer extends HTMLElement {
             shadow: ShadowRoot;
-            contador: number = 3;
+            contador: number = 7;
             constructor() {
                 super();
                 this.shadow = this.attachShadow({ mode: "open" });

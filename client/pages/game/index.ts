@@ -11,7 +11,7 @@ class Game extends HTMLElement {
     renderVisuals() {
         this.innerHTML = `
         <div class="game__countdown-container">
-            <countdown-timer class="test">5</countdown-timer>
+            <countdown-timer class="test">7</countdown-timer>
         </div>
         <div class="game__player-plays-container">
             <my-play class="game__player-play" type="piedra"></my-play>
@@ -68,7 +68,7 @@ class Game extends HTMLElement {
         }
     }
     startCountdown() {
-        let intervalCounter = 6; //tiene que ser el numero del componente "countdown" + 1, en este caso 5+1 (6)
+        let intervalCounter = 8; //tiene que ser el numero del componente "countdown" + 1, en este caso 7+1 (8)
         //                          simplemente para que termine en 0 el contador
         let playerPlayEl: any = this.querySelector(".selected") || "none";
         const countDownInterval = setInterval(() => {
