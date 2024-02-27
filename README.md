@@ -6,6 +6,8 @@ Puedes jugar a Piedra, Papel o Tijeras en línea [aquí](https://rock-paper-scis
 
 Documentación de los Endpoints de la API: [Ver Documentación](https://documenter.getpostman.com/view/17225834/2sA2rFRfDd)
 
+--------------------------------------------------------------------------------------------------------------------------------
+
 ENGLISH:
 
 ### Rock Paper Scissors Online
